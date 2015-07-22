@@ -30,7 +30,7 @@
         error: function (msg, timeout) {
             if (!timeout)
                 timeout = 4000;
-            createDom('错误: ', msg, 'alert-error', timeout);
+            createDom('错误: ', msg, 'alert-danger', timeout);
         },
         info: function (msg, timeout) {
             if (!timeout)
