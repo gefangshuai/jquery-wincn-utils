@@ -25,4 +25,22 @@
         }
     };
 
+    $.wmIni = {
+        deleteToggle: function () {
+
+            $('a[data-toggle="confirm"]').on('click', function (e) {
+                e.preventDefault();
+                var $this = $(this);
+                var msg = $this.data('message');
+                if (msg && msg != "") {
+                    if (confirm(msg)) {
+                        location.href = $this.attr('href');
+                    }
+                } else {
+                    location.href = $this.attr('href');
+                }
+            });
+        }
+    };
+    $.wmIni.deleteToggle();
 })(jQuery);
