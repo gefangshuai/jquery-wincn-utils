@@ -1,23 +1,23 @@
 (function ($, w) {
 
     var createDom = function (title, message, cls, timeout) {
-        var $alert =
-            '<div class="alert toast  ' + cls + '" role="alert">' +
+        var alt =
+            '<div class="alert toast ' + cls + '" role="alert">' +
             '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
             '<span aria-hidden="true">&times;</span>' +
             '</button>' +
             '<strong class="toast-title">' + title + '</strong>' +
             '<span class="toast-content">' + message + '</span>'
         '</div>';
-        $(document.querySelector('body')).append($alert);
-
-        clearToast(timeout);
-        return $($alert);
+        $(document.querySelector('body')).append(alt);
+        console.log($(alt).html());
+        clearToast(cls, timeout);
+        return $(alt);
     };
 
-    var clearToast = function (timeout) {
+    var clearToast = function (slt, timeout) {
         setTimeout(function () {
-            $('.toast').remove();
+            $('div.toast.'+slt).remove();
         }, timeout);
     };
 
